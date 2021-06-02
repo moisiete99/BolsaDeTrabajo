@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class VideoChatComponent implements OnInit {
   message = '';
   goToRoom = () => {
-    this.message = 'Entrando...';
+    /* this.message = 'Entrando...';
+    setInterval(() => (this.message = 'Listo'), 3000); */
+
+    //abrimos video-chat
+    window.open('http://localhost:3030/', '_blank');
   };
 
   constructor() {}
