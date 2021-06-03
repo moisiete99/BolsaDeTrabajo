@@ -1,8 +1,14 @@
 <div class="container">
-  <section>
+  <p>
      <button (click)="goToRoom()" type="button" class="btn btn-info">
-       Reunirse
+       Reunirse <i class="fab fa-teamspeak"></i>
      </button>
-  </section>
+  </p>
+
+  <p>
+    <button (click)="mailValidate()" type="button" class="btn btn-outline-success">
+      Validar email <i class="far fa-envelope"></i>
+    </button>
+ </p>
   {{ message }}
 </div>

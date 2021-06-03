@@ -15,6 +15,12 @@ export class VideoChatComponent implements OnInit {
     window.open('http://localhost:3030/', '_blank');
   };
 
+  mailValidate = () => {
+    //abrimos nodemailer
+    //window.location.href = 'http://localhost:3000/';
+    window.open('http://localhost:3000/', '_blank');
+  };
+
   constructor() {}
 
   ngOnInit(): void {}
