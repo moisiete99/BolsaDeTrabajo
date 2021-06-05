@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-chat.component.css'],
 })
 export class VideoChatComponent implements OnInit {
-  message = '';
+  //message = '';
   goToRoom = () => {
     /* this.message = 'Entrando...';
     setInterval(() => (this.message = 'Listo'), 3000); */
