@@ -8,15 +8,15 @@ app.get("/", (req, res) => {
     post: 587,
     secure: false,
     auth: {
-      user: "tina.koss@ethereal.email", //kenna96@ethereal.email
-      pass: "S3ZXqyZscVdhVh39CM", //SEmEmdgg7H2tNRtW4Y
+      user: "jordon.gusikowski@ethereal.email",
+      pass: "wZ3fGjeynk5saeyavq",
     },
   });
 
   var mivariable =
-    "<h3>Hola, gracias por unirte a nosotros y a esta comunidad,</h3>" +
-    "<h4>'LOOKING FOR JOB'</h4>" +
-    "<h5>Para comprobar tu registro de correo, <a href='http://localhost:3000/mailvalido'>pulsa aquí</a></h5>";
+    "<h1>Hola, gracias por unirte a nosotros y a esta comunidad,</h1>" +
+    "<h2>'LOOKING FOR JOB'</h2>" +
+    "<h3>Para comprobar tu registro de correo, <a href='http://localhost:3000/mailvalido'>pulsa aquí</a></h3>";
   mivariable =
     mivariable +
     '<img src="https://aq-sf.com/wp-content/uploads/2020/09/UGG.jpg" width="720" height="480">';
