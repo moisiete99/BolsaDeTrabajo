@@ -1,0 +1,16 @@
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<div class="login">
+  <h2 class="active"> Iniciar Sesión </h2>  
+  <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+    <input type="email" class="text" name="email" formControlName="email" autocomplete="off">
+    <span>Correo</span>
+    <br><br>
+    <input type="password" class="text" name="Password" formControlName="password" autocomplete="off">
+    <span>Contraseña</span>
+    <button type="submit" class="signin">
+      Iniciar Sesión
+    </button>
+    <a routerLink="register">Registrarme</a>
+    <hr>
+  </form>
+</div>
