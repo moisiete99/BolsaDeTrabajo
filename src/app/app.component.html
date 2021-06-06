@@ -1,55 +1,27 @@
-<h1>hola</h1>
-
-<html>
-  <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+    <a class="navbar-brand" routerLink="home" routerLinkActive="active">Angular RegisterAndLogin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     
-      <table>
-        
-        <form action="login.php" method="post">
-          <h1>Hola2</h1>
-          <tr>
-            <td><h2>Iniciar Sesion</h2></td>
-          </tr>
-          <tr>
-            <td><input type="email" name="email" placeholder="email..." required></td>
-          </tr>
-          <tr>
-            <td><input type="password" name="password" placeholder="contraseña..." required></td>
-          </tr>
-          <tr>
-            <input type="radio" name="tipo" value="1" required>Empresa
-            <input type="radio" name="tipo" value="2" required>Aspirante
-          </tr>
-          <tr>
-            <td><input type="submit" name="enviar" value="Iniciar Sesion"></td>
-          </tr>
-        </form>
-      </table>
-    
-  </body>
-</html>
-
-<div>
-  <table>
-    <form>
-      <tr>
-        <td><h2>Iniciar Sesion</h2></td>
-      </tr>
-      <tr>
-        <td><input type="email" name="email" placeholder="email..." required></td>
-      </tr>
-      <tr>
-        <td><input type="password" name="password" placeholder="contraseña..." required></td>
-      </tr>
-      <tr>
-        <input type="radio" name="tipo" value="1" required>Empresa
-        <input type="radio" name="tipo" value="2" required>Aspirante
-      </tr>
-      <tr>
-        <td><input type="submit" name="enviar" value="Iniciar Sesion"></td>
-      </tr>
-    </form>
-  </table>
-</div>
-
+    <div class="collapse navbar-collapse" id="navbarsExample">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="loginbtn" routerLink="home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="loginbtn" routerLink="login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item">
+          <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="loginbtn" routerLink="registration" routerLinkActive="active">Registration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="logoutbtn" routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+      </ul>
+    </div>
+</nav>
 <router-outlet></router-outlet>
