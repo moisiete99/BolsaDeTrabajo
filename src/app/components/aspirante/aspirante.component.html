@@ -1,0 +1,11 @@
+<!-- <p>aspirante works!</p> -->
+<h1>Home Aspirantes</h1>
+
+<table *ngIf="empresas.length > 0">
+    <tr>
+        <td>Nombre</td>
+    </tr>
+    <tr *ngFor="let e of empresas">
+        <td> {{e.Nombre}} </td>
+    </tr>
+</table>

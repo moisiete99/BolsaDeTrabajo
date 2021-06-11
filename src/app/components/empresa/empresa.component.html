@@ -1,0 +1,19 @@
+<!-- <p>empresa works!</p> -->
+<h1>Home Empresa</h1>
+
+<table *ngIf="aspirantes.length > 0">
+    <tr>
+        <td>Nombre</td>
+        <td>Apellidos</td>
+        <td>Edad</td>
+        <td>País</td>
+        <td>Descripción</td>
+    </tr>
+    <tr *ngFor="let a of aspirantes">
+        <td> {{a.Nombre}} </td>
+        <td> {{a.Apellidos}} </td>
+        <td> {{a.Edad}} </td>
+        <td> {{a.Pais}} </td>
+        <td> {{a.Descripcion}} </td>
+    </tr>
+</table>
