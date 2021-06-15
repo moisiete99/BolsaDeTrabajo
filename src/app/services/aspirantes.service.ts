@@ -20,16 +20,16 @@ export class AspirantesService {
     return this.http.get<any>(this.URL + '/aspirantes');
   }
 
-  getAspirante(aspirante:any){
+  /* getAspirante(aspirante:any){
     return this.http.get<any>(this.URL + '/aspirante', aspirante)
-  }
+  } */
 
-  setIdAsp(id:any){
+  /* setIdAsp(id:any){
     this.ID = id
   }
   getIdAsp(){
     return this.ID
-  }
+  } */
 
   /* Original
   constructor(private http: HttpClient, private authService: AuthService) { }
