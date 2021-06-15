@@ -1,19 +1,42 @@
 <!-- <p>empresa works!</p> -->
 <h1>Home Empresa</h1>
 
-<table *ngIf="aspirantes.length > 0">
-    <tr>
-        <td>Nombre</td>
-        <td>Apellidos</td>
-        <td>Edad</td>
-        <td>País</td>
-        <td>Descripción</td>
-    </tr>
-    <tr *ngFor="let a of aspirantes">
-        <td> {{a.Nombre}} </td>
-        <td> {{a.Apellidos}} </td>
-        <td> {{a.Edad}} </td>
-        <td> {{a.Pais}} </td>
-        <td> {{a.Descripcion}} </td>
-    </tr>
-</table>
+<form (submit)="verAspirante()">
+    <table *ngIf="aspirantes.length > 0">
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Apellidos</td>
+            <td>Edad</td>
+            <td>País</td>
+            <td>Estado</td>
+            <td>Municipio</td>
+            <td>Direccion</td>
+            <td>Acerca de</td>
+            <td>Descripción</td>
+            <td>Habilidades</td>
+        </tr>
+        <tr *ngFor="let a of aspirantes">
+            <td> {{a.ID}} </td>
+            <td> {{a.Nombre}} </td>
+            <td> {{a.Apellidos}} </td>
+            <td> {{a.Edad}} </td>
+            <td> {{a.Pais}} </td>
+            <td> {{a.Estado}} </td>
+            <td> {{a.Municipio}} </td>
+            <td> {{a.Direccion}} </td>
+            <td> {{a.AcercaDe}} </td>
+            <td> {{a.Descripcion}} </td>
+            <td> {{a.Habilidades}} </td>
+            <!-- <td> <button type="submit" [(ngModel)]="aspirante.id" name="id" value="{a.ID}" ngDefaultControl> Ver {{a.ID}} </button> </td> -->
+            <!-- <app-ver-aspirantes [ID]="a.ID" ></app-ver-aspirantes> -->
+            <!-- <input type="submit" [(ngModel)]="aspirante.id" name="id" value="7"> -->
+            <!-- <input type="text" [(ngModel)]="aspirante.id" class="text" name="a.id" value="7" autocomplete="off">
+            <button type="submit" class="signin">
+                Iniciar Sesión
+            </button> -->
+        </tr>
+    </table>
+
+    
+</form>

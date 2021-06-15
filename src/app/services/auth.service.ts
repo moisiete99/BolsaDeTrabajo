@@ -23,7 +23,7 @@ export class AuthService {
   }
 
   verify(user:any){
-    return this.http.post<any>(this.URL + "/verifiA", user)
+    return this.http.post<any>(this.URL + "/verify", user)
   }
 
   /* Original

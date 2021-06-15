@@ -13,10 +13,22 @@ export class AspirantesService {
     "Content-Type": "application/json"
   });
 
+  ID: null
   URL = "http://localhost:3500"
 
   getAllAspirantes(){
-    return this.http.get<any>(this.URL + "/aspirantes");
+    return this.http.get<any>(this.URL + '/aspirantes');
+  }
+
+  getAspirante(aspirante:any){
+    return this.http.get<any>(this.URL + '/aspirante', aspirante)
+  }
+
+  setIdAsp(id:any){
+    this.ID = id
+  }
+  getIdAsp(){
+    return this.ID
   }
 
   /* Original

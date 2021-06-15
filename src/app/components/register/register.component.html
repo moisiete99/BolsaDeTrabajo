@@ -3,18 +3,18 @@
 <div class="register">
     <h2 class="active">Registro</h2>
     <form (submit)="register()">
-        <input type="text" [(ngModel)]="user.name" class="text" name="name" autocomplete="off">
+        <input type="text" [(ngModel)]="user.name" class="text" name="name" autocomplete="off" required>
         <span>Nombre</span>
         <br><br>
-        <input type="email" [(ngModel)]="user.email" class="text" name="email" autocomplete="off">
+        <input type="email" [(ngModel)]="user.email" class="text" name="email" autocomplete="off"required>
         <span>Correo</span>
         <br><br>
-        <input type="password" [(ngModel)]="user.password" class="text" name="password" autocomplete="off">
+        <input type="password" [(ngModel)]="user.password" class="text" name="password" autocomplete="off" required>
         <span>Contraseña</span>
         <br><br>
-        <input type="radio" [(ngModel)]="user.tipo" class="custom-checkbox" name="tipo" value="A">
+        <input type="radio" [(ngModel)]="user.tipo" class="custom-checkbox" name="tipo" value="A" required>
         <label>Aspirante</label>
-        <input type="radio" [(ngModel)]="user.tipo" class="custom-checkbox" name="tipo" value="E">
+        <input type="radio" [(ngModel)]="user.tipo" class="custom-checkbox" name="tipo" value="E" required>
         <label>Empresa</label>
         <button type="submit" class="signin">
             Registrarme

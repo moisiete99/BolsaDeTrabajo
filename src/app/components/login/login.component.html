@@ -3,10 +3,10 @@
 <div class="login">
   <h2 class="active"> Iniciar Sesión </h2>  
   <form  (submit)="signin()">
-    <input type="email" [(ngModel)]="user.email" class="text" name="email" autocomplete="off">
+    <input type="email" [(ngModel)]="user.email" class="text" name="email" autocomplete="off" required>
     <span>Correo</span>
     <br><br>
-    <input type="password" [(ngModel)]="user.password" class="text" name="Password"  autocomplete="off">
+    <input type="password" [(ngModel)]="user.password" class="text" name="Password"  autocomplete="off" required>
     <span>Contraseña</span>
     <button type="submit" class="signin">
       Iniciar Sesión
