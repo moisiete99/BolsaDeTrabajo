@@ -17,18 +17,24 @@ export class LoginComponent implements OnInit {
 
   user = {email:"", password:""}
 
+  id:any
+
   signin(){
     this.authService.signIn(this.user)
     .subscribe(
       res => {
         console.log(res)
         if(res){
+          this.id = res.id
           console.log(res.pemiso)
           console.log(res.tipo)
+          this.authService.setID(this.id)
         }
       },
       err => console.log(err)
     )
+
+    this.authService.setEmail(this.user)
 
     this.authService.verify(this.user)
     .subscribe(

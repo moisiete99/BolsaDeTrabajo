@@ -1,6 +1,8 @@
 <!-- <p>empresa works!</p> -->
 <h1>Home Empresa</h1>
 
+<a class="nav-link" [routerLink]="['/registerE']">Registrar Datos Empresa</a>
+
 <form (submit)="verAspirante()">
     <table *ngIf="aspirantes.length > 0">
         <tr>

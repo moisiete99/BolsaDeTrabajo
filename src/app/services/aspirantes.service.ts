@@ -13,11 +13,15 @@ export class AspirantesService {
     "Content-Type": "application/json"
   });
 
-  ID: null
   URL = "http://localhost:3500"
 
   getAllAspirantes(){
     return this.http.get<any>(this.URL + '/aspirantes');
+  }
+
+  registrarAsp(aspirante:any){
+    console.log(aspirante)
+    return this.http.post<any>(this.URL + '/registerA', aspirante)
   }
 
   /* getAspirante(aspirante:any){

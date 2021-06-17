@@ -16,6 +16,8 @@ import { AspirantesService } from './services/aspirantes.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { RegisterAComponent } from './components/register-a/register-a.component';
+import { RegisterEComponent } from './components/register-e/register-e.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     RegisterComponent,
     EmpresaComponent,
-    AspiranteComponent
+    AspiranteComponent,
+    RegisterAComponent,
+    RegisterEComponent
   ],
   imports: [
     BrowserModule,

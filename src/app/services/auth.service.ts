@@ -26,6 +26,16 @@ export class AuthService {
     return this.http.post<any>(this.URL + "/verify", user)
   }
 
+  setID(id:any){
+    sessionStorage.setItem("ID",id)
+  }
+  setEmail(user:any){
+    sessionStorage.setItem("Email",user.email)
+  }
+  getID(){
+    return sessionStorage.getItem("ID")
+  }
+
   /* Original
   constructor(private http: HttpClient) { }
   headers: HttpHeaders = new HttpHeaders({

@@ -1,0 +1,20 @@
+<!-- <p>register-e works!</p> -->
+
+<h2>Registro de datos de la empresa</h2>
+<div class="register">
+    <form (submit)="registrarE()">
+        <input type="text" [(ngModel)]="empresa.pais" class="text" name="pais">
+        <span>Pais</span>
+        <input type="text" [(ngModel)]="empresa.estado" class="text" name="estado">
+        <span>Estado</span>
+        <input type="text" [(ngModel)]="empresa.municipio" class="text" name="municipio">
+        <span>Municipio</span>
+        <input type="text" [(ngModel)]="empresa.direccion" class="text" name="direccion">
+        <span>Direccion</span>
+        <input type="text" [(ngModel)]="empresa.descripcion" class="text" name="descripcion">
+        <span>Descripcion</span>
+        <button type="submit" class="signin">
+            Registrarme
+        </button>
+    </form>
+</div>

@@ -47,7 +47,7 @@ router.post('/signin', async (req, res) => {
     const re = await db.query("select * from cuentas where Correo = ?", [email]);
     if (re[0]) {
         if (re[0].Contraseña == password) {
-            res.json({ permiso: true })
+            res.json({ permiso: true, id:re[0].ID })
         } else {
             res.json({ permiso: false })
         }
@@ -100,6 +100,22 @@ router.post('/verify', async(req, res) => {
             res.json({ tipo: "E" })
         }
     }
+})
+
+router.post('/registerA', async(req, res) => {
+    const {id,apellidos,edad,pais,estado,municipio,direccion,acercade,descripcion,habilidades,foto} = req.body;
+    //const aspirante = {ID:"",idCorreo:id,Apellidos:apellidos,Edad:edad,Pais:pais,Estado:estado,Municipio:municipio,Direccion:direccion,AcercaDe:acercade,Descripcion:descripcion,Habilidades:"",Foto:""}
+    const re = await db.query("update aspirantes set apellidos=?,edad=?,pais=?,estado=?,municipio=?,direccion=?,acercade=?,descripcion=?,habilidades=?,foto=? where idCorreo = ? ", [apellidos,edad,pais,estado,municipio,direccion,acercade,descripcion,habilidades,foto,id]);
+
+    res.json({id:re.insertId});
+})
+
+router.post('/registerE', async(req, res) => {
+    const {id,pais,estado,municipio,direccion,descripcion,foto} = req.body;
+
+    const re = await db.query("update empresas set pais=?,estado=?,municipio=?,direccion=?,descripcion=?,foto=? where idCorreo = ?", [pais,estado,municipio,direccion,descripcion,foto,id])
+
+    res.json({id:re.insertId});
 })
 
 module.exports = router;

@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class EmpresasService {
 
-  constructor(private hhtp:HttpClient, private authService:AuthService) { }
+  constructor(private http:HttpClient, private authService:AuthService) { }
   headers: HttpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
   });
@@ -16,6 +16,11 @@ export class EmpresasService {
   URL = "http://localhost:3500"
 
   getAllEmpresas(){
-    return this.hhtp.get<any>(this.URL + "/empresas")
+    return this.http.get<any>(this.URL + "/empresas")
+  }
+
+  registrarEmp(empresa:any){
+    console.log(empresa)
+    return this.http.post<any>(this.URL + '/registerE', empresa)
   }
 }

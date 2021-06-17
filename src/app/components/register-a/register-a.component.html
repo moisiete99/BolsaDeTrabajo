@@ -1,0 +1,44 @@
+<!-- <p>register-a works!</p> -->
+
+<h2>Registro de datos del aspirante</h2>
+<div class="register">
+    <form (submit)="registrarA()">
+        <input type="text" [(ngModel)]="aspirante.apellidos" class="text" name="apellidos">
+        <span>Apellidos</span>
+        <input type="text" [(ngModel)]="aspirante.edad" class="text" name="edad">
+        <span>Edad</span>
+        <input type="text" [(ngModel)]="aspirante.pais" class="text" name="pais">
+        <span>Pais</span>
+        <input type="text" [(ngModel)]="aspirante.estado" class="text" name="estado">
+        <span>Estado</span>
+        <input type="text" [(ngModel)]="aspirante.municipio" class="text" name="municipio">
+        <span>Municipio</span>
+        <input type="text" [(ngModel)]="aspirante.direccion" class="text" name="direccion">
+        <span>Direccion</span>
+        <input type="text" [(ngModel)]="aspirante.acercade" class="text" name="acercade">
+        <span>Acerca de</span>
+        <input type="text" [(ngModel)]="aspirante.descripcion" class="text" name="descripcion">
+        <span>Descripcion</span>
+        
+        <br>
+        <b>
+            Habilidades <br>
+            1 - Back-end |
+            2 - Front-end | <br>
+            3 - HTML |
+            4 - CSS |
+            5 - Python | <br>
+            6 - C++ | 
+            7 - Java |
+            8 - JavaScript | <br>
+            9 - Redes 
+        </b>
+        
+        <input type="text" [(ngModel)]="aspirante.habilidades" class="text" name="habilidades">
+        
+        
+        <button type="submit" class="signin">
+            Registrarme
+        </button>
+    </form>
+</div>
