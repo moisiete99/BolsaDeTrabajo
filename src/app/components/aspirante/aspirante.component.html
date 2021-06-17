@@ -2,23 +2,27 @@
 <h1>Home Aspirantes</h1>
 <a class="nav-link" [routerLink]="['/registerA']">Registrar Datos Aspirante</a>
 
-<table *ngIf="empresas.length > 0">
-    <tr>
-        <td>ID</td>
-        <td>Nombre</td>
-        <td>Pais</td>
-        <td>Estado</td>
-        <td>Municipio</td>
-        <td>Direccion</td>
-        <td>Descripcion</td>
-    </tr>
-    <tr *ngFor="let e of empresas">
-        <td> {{e.ID}} </td>
-        <td> {{e.Nombre}} </td>
-        <td> {{e.Pais}} </td>
-        <td> {{e.Estado}} </td>
-        <td> {{e.Municipio}} </td>
-        <td> {{e.Direccion}} </td>
-        <td> {{e.Descripcion}} </td>
-    </tr>
-</table>
+<form>
+    Busqueda: <input type="text">
+    <table *ngIf="empresas.length > 0">
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Pais</td>
+            <td>Estado</td>
+            <td>Municipio</td>
+            <td>Direccion</td>
+            <td>Descripcion</td>
+        </tr>
+        <tr *ngFor="let e of empresas">
+            <td> {{e.ID}} </td>
+            <td> {{e.Nombre}} </td>
+            <td> {{e.Pais}} </td>
+            <td> {{e.Estado}} </td>
+            <td> {{e.Municipio}} </td>
+            <td> {{e.Direccion}} </td>
+            <td> {{e.Descripcion}} </td>
+            <td><button> "BOTON" </button></td>
+        </tr>
+    </table>
+</form>

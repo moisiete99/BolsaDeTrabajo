@@ -4,6 +4,7 @@
 <a class="nav-link" [routerLink]="['/registerE']">Registrar Datos Empresa</a>
 
 <form (submit)="verAspirante()">
+    Busqueda: <input type="text">
     <table *ngIf="aspirantes.length > 0">
         <tr>
             <td>ID</td>
@@ -30,6 +31,7 @@
             <td> {{a.AcercaDe}} </td>
             <td> {{a.Descripcion}} </td>
             <td> {{a.Habilidades}} </td>
+            <td><button> "BOTON" </button></td>
             <!-- <td> <button type="submit" [(ngModel)]="aspirante.id" name="id" value="{a.ID}" ngDefaultControl> Ver {{a.ID}} </button> </td> -->
             <!-- <app-ver-aspirantes [ID]="a.ID" ></app-ver-aspirantes> -->
             <!-- <input type="submit" [(ngModel)]="aspirante.id" name="id" value="7"> -->
