@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable,Output,EventEmitter } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -6,6 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
+
+  /* @Output() getLoggedInName: EventEmitter<any> = new EventEmitter(); */
 
   constructor(private http: HttpClient) { }
   headers: HttpHeaders = new HttpHeaders({
@@ -26,15 +28,35 @@ export class AuthService {
     return this.http.post<any>(this.URL + "/verify", user)
   }
 
+  verifyHome(email:any){
+    console.log(email)
+    return this.http.post<any>(this.URL + "/verifyH", email)
+  }
+
   setID(id:any){
     sessionStorage.setItem("ID",id)
-  }
-  setEmail(user:any){
-    sessionStorage.setItem("Email",user.email)
   }
   getID(){
     return sessionStorage.getItem("ID")
   }
+  setEmail(user:any){
+    sessionStorage.setItem("Email",user.email)
+  }
+  getEmail(){
+    return sessionStorage.getItem("Email")
+  }
+  deleteToken() {
+    sessionStorage.removeItem("Email")
+    sessionStorage.removeItem("ID")
+  }
+  /* isLoggedIn() {
+    const usertoken = this.getEmail();
+    if (usertoken != null) {
+      return true
+    }
+    return false;
+  } */
+  
 
   /* Original
   constructor(private http: HttpClient) { }

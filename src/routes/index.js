@@ -77,6 +77,14 @@ router.get('/aspirantes', async(req, res) => {
     const re = await db.query("select * from aspirantes");
     res.json(re) */
 })
+router.post('/aspirante', async(req, res) => {
+    const { id } = req.body;
+    const re = await db.query("select * from aspirantes where ID = ?", [id])
+
+    console.log(re)
+
+    res.json(re)
+})
 
 /* router.get('aspirante', async(req, res) => {
     const {id} = req.body;
@@ -86,6 +94,25 @@ router.get('/aspirantes', async(req, res) => {
 
 router.get('/empresas', async(req, res) => {
     const re = await db.query("select * from empresas")
+    res.json(re)
+})
+
+router.post('/empresa', async(req, res) => {
+    const { id } = req.body
+    const re = await db.query("select * from empresas where ID = ?", [id])
+
+    res.json(re)
+})
+
+router.get('/trabajos', async(req, res) => {
+    const re = await db.query("select * from trabajos")
+    res.json(re)
+})
+
+router.post('/trabajo', async(req, res) => {
+    const { id } = req.body
+    const re = await db.query("select * from trabajos where ID = ?", [id])
+
     res.json(re)
 })
 
@@ -116,6 +143,27 @@ router.post('/registerE', async(req, res) => {
     const re = await db.query("update empresas set pais=?,estado=?,municipio=?,direccion=?,descripcion=?,foto=? where idCorreo = ?", [pais,estado,municipio,direccion,descripcion,foto,id])
 
     res.json({id:re.insertId});
+})
+
+router.post('/registerT', async(req, res) => {
+    const {id,descripcion,habilidadesN,horarios,idAspirantes} = req.body;
+    const trabajo = {idEmpresa:id, Descripcion:descripcion, HabilidadesN:habilidadesN,Horarios:horarios,idAspirantes:idAspirantes}    
+    const re = await db.query("insert into trabajos set ?", [trabajo])
+
+    res.json(re)
+})
+
+router.post('/verifyH', async(req, res) => {
+    const {email} = req.body;
+    const re = await db.query("select * from cuentas where Correo = ?", [email]);
+    if(re[0]){
+        if(re[0].Tipo == "A"){
+            res.json({ tipo: "A" });
+        }
+        else if(re[0].Tipo == "E"){
+            res.json({ tipo: "E" });
+        }
+    }
 })
 
 module.exports = router;

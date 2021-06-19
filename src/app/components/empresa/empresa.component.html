@@ -4,43 +4,67 @@
 <a class="nav-link" [routerLink]="['/registerE']">Registrar Datos Empresa</a>
 
 <form (submit)="verAspirante()">
-    Busqueda: <input type="text">
-    <table *ngIf="aspirantes.length > 0">
-        <tr>
-            <td>ID</td>
-            <td>Nombre</td>
-            <td>Apellidos</td>
-            <td>Edad</td>
-            <td>País</td>
-            <td>Estado</td>
-            <td>Municipio</td>
-            <td>Direccion</td>
-            <td>Acerca de</td>
-            <td>Descripción</td>
-            <td>Habilidades</td>
-        </tr>
-        <tr *ngFor="let a of aspirantes">
-            <td> {{a.ID}} </td>
-            <td> {{a.Nombre}} </td>
-            <td> {{a.Apellidos}} </td>
-            <td> {{a.Edad}} </td>
-            <td> {{a.Pais}} </td>
-            <td> {{a.Estado}} </td>
-            <td> {{a.Municipio}} </td>
-            <td> {{a.Direccion}} </td>
-            <td> {{a.AcercaDe}} </td>
-            <td> {{a.Descripcion}} </td>
-            <td> {{a.Habilidades}} </td>
-            <td><button> "BOTON" </button></td>
-            <!-- <td> <button type="submit" [(ngModel)]="aspirante.id" name="id" value="{a.ID}" ngDefaultControl> Ver {{a.ID}} </button> </td> -->
-            <!-- <app-ver-aspirantes [ID]="a.ID" ></app-ver-aspirantes> -->
-            <!-- <input type="submit" [(ngModel)]="aspirante.id" name="id" value="7"> -->
-            <!-- <input type="text" [(ngModel)]="aspirante.id" class="text" name="a.id" value="7" autocomplete="off">
-            <button type="submit" class="signin">
-                Iniciar Sesión
-            </button> -->
-        </tr>
-    </table>
+    Busqueda por habilidad: <input type="text" [(ngModel)]="aspirante.id" class="text" name="id" placeholder="ID">
+    <button type="submit" class="signin">Buscar</button>
+</form>
 
-    
+<form>
+    <a class="nav-link" [routerLink]="['/verAspirante']" routerLinkActive="active"><b>Ver Aspirante</b></a>
+    <a class="nav-link" [routerLink]="['/registerT']" routerLinkActive="active"><b>Registrar Trabajo</b></a>
+    <table *ngIf="aspirantes.length > 0" class="table table-striped table-bordered">
+        <thead bgcolor="#3972e0">
+            <tr>
+              <th scope="col" class="text-center">ID</th>
+              <!-- <th scope="col" class="text-center">idCorreo</th> -->
+              <th scope="col" class="text-center">Nombre</th>
+              <th scope="col" class="text-center">Apellidos</th>
+              <th scope="col" class="text-center">Edad</th>
+              <th scope="col" class="text-center">País</th>
+              <th scope="col" class="text-center">Estado</th>
+              <th scope="col" class="text-center">Municipio</th>
+              <th scope="col" class="text-center">Dirección</th>
+              <th scope="col" class="text-center">Acerca de</th>
+              <th scope="col" class="text-center">Descricpión</th>
+              <th scope="col" class="text-center">Habilidades</th>
+              <th scope="col" class="text-center">Foto</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="show; else notShow">
+                <tr *ngFor="let a of aspirantes" class="text-center">
+                    <td> {{a.ID}} </td>
+                    <td> {{a.Nombre}} </td>
+                    <td> {{a.Apellidos}} </td>
+                    <td> {{a.Edad}} </td>
+                    <td> {{a.Pais}} </td>
+                    <td> {{a.Estado}} </td>
+                    <td> {{a.Municipio}} </td>
+                    <td> {{a.Direccion}} </td>
+                    <td> {{a.AcercaDe}} </td>
+                    <td> {{a.Descripcion}} </td>
+                    <td> {{a.Habilidades}} </td>
+                    <td></td>
+                    <td><button> "BOTON" </button></td>
+                </tr>
+        
+        </tbody>
+        <tbody>
+            <ng-template #notShow>
+                <tr *ngFor="let a of aspirantes2" class="text-center">
+                    <td> {{a.ID}} </td>
+                    <td> {{a.Nombre}} </td>
+                    <td> {{a.Apellidos}} </td>
+                    <td> {{a.Edad}} </td>
+                    <td> {{a.Pais}} </td>
+                    <td> {{a.Estado}} </td>
+                    <td> {{a.Municipio}} </td>
+                    <td> {{a.Direccion}} </td>
+                    <td> {{a.AcercaDe}} </td>
+                    <td> {{a.Descripcion}} </td>
+                    <td> {{a.Habilidades}} </td>
+                    <td></td>
+                    <td><button> "BOTON" </button></td>
+                </tr>
+            </ng-template>>
+        </tbody>
+    </table>
 </form>

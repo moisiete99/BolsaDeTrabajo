@@ -5,7 +5,10 @@ import { EmpresaComponent } from './components/empresa/empresa.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterAComponent } from './components/register-a/register-a.component';
 import { RegisterEComponent } from './components/register-e/register-e.component';
+import { RegisterTComponent } from './components/register-t/register-t.component';
 import { RegisterComponent } from './components/register/register.component';
+import { VerAspiranteComponent } from './components/ver-aspirante/ver-aspirante.component';
+import { VerTrabajoComponent } from './components/ver-trabajo/ver-trabajo.component';
 import { VideoChatComponent } from "./components/video-chat/video-chat.component";
 
 const routes: Routes = [
@@ -15,7 +18,10 @@ const routes: Routes = [
   { path: 'empresa', component: EmpresaComponent },
   { path: 'aspirante', component: AspiranteComponent },
   { path: 'registerA', component: RegisterAComponent },
-  { path: 'registerE', component: RegisterEComponent }
+  { path: 'registerE', component: RegisterEComponent },
+  { path: 'verAspirante', component: VerAspiranteComponent },
+  { path: 'verTrabajo', component: VerTrabajoComponent },
+  { path: 'registerT', component: RegisterTComponent }
 ];
 
 @NgModule({

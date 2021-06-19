@@ -1,0 +1,68 @@
+<!-- <p>ver-aspirante works!</p> -->
+
+<h2>Ver Aspirante por ID</h2>
+
+<form (submit)="verAspirante()">
+    Busqueda por ID: <input type="text" [(ngModel)]="aspirante.id" class="text" name="id" placeholder="ID">
+    <button type="submit" class="signin">Buscar</button>
+</form>
+
+<form>
+    <table class="table table-striped table-bordered">
+        <thead bgcolor="#3972e0">
+            <tr>
+                <th scope="col" class="text-center">ID</th>
+                <!-- <th scope="col" class="text-center">idCorreo</th> -->
+                <th scope="col" class="text-center">Nombre</th>
+                <th scope="col" class="text-center">Apellidos</th>
+                <th scope="col" class="text-center">Edad</th>
+                <th scope="col" class="text-center">País</th>
+                <th scope="col" class="text-center">Estado</th>
+                <th scope="col" class="text-center">Municipio</th>
+                <th scope="col" class="text-center">Dirección</th>
+                <th scope="col" class="text-center">Acerca de</th>
+                <th scope="col" class="text-center">Descricpión</th>
+                <th scope="col" class="text-center">Habilidades</th>
+                <th scope="col" class="text-center">Foto</th>
+              </tr>
+        </thead>
+        <tbody *ngIf="show; else notShow">
+            <h2>No hay datos para mostrar</h2>
+            <tr *ngFor="let a of aspirantes" class="text-center">
+                
+                <!-- <td> {{a.ID}} </td>
+                <td> {{a.Nombre}} </td>
+                <td> {{a.Apellidos}} </td>
+                <td> {{a.Edad}} </td>
+                <td> {{a.Pais}} </td>
+                <td> {{a.Estado}} </td>
+                <td> {{a.Municipio}} </td>
+                <td> {{a.Direccion}} </td>
+                <td> {{a.AcercaDe}} </td>
+                <td> {{a.Descripcion}} </td>
+                <td> {{a.Habilidades}} </td>
+                <td></td>
+                <td><button> "BOTON" </button></td> -->
+            </tr>
+        </tbody>
+        <tbody>
+            <ng-template #notShow>
+                <tr *ngFor="let a of aspirante2" class="text-center">
+                    <td> {{a.ID}} </td>
+                    <td> {{a.Nombre}} </td>
+                    <td> {{a.Apellidos}} </td>
+                    <td> {{a.Edad}} </td>
+                    <td> {{a.Pais}} </td>
+                    <td> {{a.Estado}} </td>
+                    <td> {{a.Municipio}} </td>
+                    <td> {{a.Direccion}} </td>
+                    <td> {{a.AcercaDe}} </td>
+                    <td> {{a.Descripcion}} </td>
+                    <td> {{a.Habilidades}} </td>
+                    <td></td>
+                    <td><button> "BOTON" </button></td>
+                </tr>
+            </ng-template>
+        </tbody>
+    </table>
+</form>

@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RegisterAComponent } from './components/register-a/register-a.component';
 import { RegisterEComponent } from './components/register-e/register-e.component';
+import { VerAspiranteComponent } from './components/ver-aspirante/ver-aspirante.component';
+import { RegisterTComponent } from './components/register-t/register-t.component';
+import { VerTrabajoComponent } from './components/ver-trabajo/ver-trabajo.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { RegisterEComponent } from './components/register-e/register-e.component
     EmpresaComponent,
     AspiranteComponent,
     RegisterAComponent,
-    RegisterEComponent
+    RegisterEComponent,
+    VerAspiranteComponent,
+    RegisterTComponent,
+    VerTrabajoComponent
   ],
   imports: [
     BrowserModule,

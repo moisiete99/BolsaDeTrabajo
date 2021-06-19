@@ -19,6 +19,11 @@ export class AspirantesService {
     return this.http.get<any>(this.URL + '/aspirantes');
   }
 
+  getAspirante(aspirante:any){
+    console.log(aspirante)
+    return this.http.post<any>(this.URL + '/aspirante', aspirante)
+  }
+
   registrarAsp(aspirante:any){
     console.log(aspirante)
     return this.http.post<any>(this.URL + '/registerA', aspirante)

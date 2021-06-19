@@ -1,0 +1,75 @@
+<!-- <p>ver-trabajo works!</p> -->
+
+<form (submit)="verTrabajo()">
+    <h2>Ver Trabajo</h2>
+    Busqueda por ID: <input type="text" [(ngModel)]="trabajo.id" class="text" name="id" placeholder="ID">
+    <button type="submit" class="signin">Buscar</button>
+    <table class="table table-striped table-bordered">
+        <thead bgcolor="#3972e0">
+            <tr>
+                <th scope="col" class="text-center">ID</th>
+                <th scope="col" class="text-center">ID Empresa</th>
+                <th scope="col" class="text-center">Descripcion</th>
+                <th scope="col" class="text-center">Habilidades Necesarias</th>
+                <th scope="col" class="text-center">Horarios</th>
+                <th scope="col" class="text-center">ID Aspirantes</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="show1, else notShow1">
+            <h2>No hay datos para mostrar</h2>
+            <tr *ngFor="let t of trabajos" class="text-center">
+            </tr>
+        </tbody>
+        <tbody>
+            <ng-template #notShow1>
+                <tr *ngFor="let t of trabajo2" class="text-center">
+                    <td> {{t.ID}} </td>
+                    <td> {{t.idEmpresa}} </td>
+                    <td> {{t.Descripcion}} </td>
+                    <td> {{t.HabilidadesN}} </td>
+                    <td> {{t.Horarios}} </td>
+                    <td> {{t.idAspirantes}} </td>
+                </tr>
+            </ng-template>
+        </tbody>
+    </table>
+</form>
+
+<form (submit)="verEmpresa()">
+    <h2>Ver Empresa</h2>
+    Busqueda por ID: <input type="text" [(ngModel)]="empresa.id" class="text" name="id" placeholder="ID">
+    <button type="submit" class="signin">Buscar</button>
+    <table class="table table-striped table-bordered">
+        <thead bgcolor="#3972e0">
+            <tr>
+                <th scope="col" class="text-center">ID</th>
+                <th scope="col" class="text-center">Nombre</th>
+                <th scope="col" class="text-center">Pais</th>
+                <th scope="col" class="text-center">Estado</th>
+                <th scope="col" class="text-center">Municipio</th>
+                <th scope="col" class="text-center">Direccion</th>
+                <th scope="col" class="text-center">Descripcion</th>
+                <th scope="col" class="text-center">Foto</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="show2, else notShow2">
+            <h2>No hay datos para mostrar</h2>
+            <tr *ngFor="let t of trabajos" class="text-center">
+            </tr>
+        </tbody>
+        <tbody>
+            <ng-template #notShow2>
+                <tr *ngFor="let e of empresa2" class="text-center">
+                    <td> {{e.ID}} </td>
+                    <td> {{e.Nombre}} </td>
+                    <td> {{e.Pais}} </td>
+                    <td> {{e.Estado}} </td>
+                    <td> {{e.Municipio}} </td>
+                    <td> {{e.Direccion}} </td>
+                    <td> {{e.Descripcion}} </td>
+                    <td> {{e.Foto}} </td>
+                </tr>
+            </ng-template>
+        </tbody>
+    </table>
+</form>

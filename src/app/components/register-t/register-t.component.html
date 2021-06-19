@@ -1,0 +1,18 @@
+<!-- <p>register-t works!</p> -->
+
+<h2>Registro de datos para un trabajo</h2>
+<div class="register">
+    <form (submit)="registrarT()">
+        <input type="text" [(ngModel)]="trabajo.descripcion" class="text" name="descripcion">
+        <span>Descripcion</span>
+        <input type="text" [(ngModel)]="trabajo.habilidadesN" class="text" name="habilidadesN">
+        <span>habilidades Necesarias</span>
+        <input type="text" [(ngModel)]="trabajo.horarios" class="text" name="horarios" placeholder="00:00 - 24:00">
+        <span>Horarios</span>
+        <input type="text" [(ngModel)]="trabajo.idAspirantes" class="text" name="idAspirantes">
+        <span>ID Aspirantes</span>
+        <button type="submit" class="signin">
+            Registrarme
+        </button>
+    </form>
+</div>

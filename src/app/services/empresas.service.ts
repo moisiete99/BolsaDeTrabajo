@@ -19,6 +19,10 @@ export class EmpresasService {
     return this.http.get<any>(this.URL + "/empresas")
   }
 
+  getEmpresa(empresa:any){
+    return this.http.post<any>(this.URL + '/empresa', empresa)
+  }
+
   registrarEmp(empresa:any){
     console.log(empresa)
     return this.http.post<any>(this.URL + '/registerE', empresa)

@@ -13,8 +13,14 @@ export class EmpresaComponent implements OnInit {
   constructor(private aspService: AspirantesService, private router:Router) { }
 
   aspirantes = []
+  aspirantes2 = []
+
+  aspirante = {id:""}
+
+  show:any
 
   ngOnInit(): void {
+    this.show = true;
     this.verAspirantes()
   }
 
@@ -30,6 +36,16 @@ export class EmpresaComponent implements OnInit {
   }
 
   verAspirante(){
+    this.show = false
+    console.log(this.aspirante)
+    this.aspService.getAspirante(this.aspirante)
+    .subscribe(
+      res => {
+        this.aspirantes2 = res
+        console.log(res)
+      },
+      err => console.log(err)
+    );
     //console.log(this.aspirante)
 
     /*this.aspService.getAspirante(this.aspirante)

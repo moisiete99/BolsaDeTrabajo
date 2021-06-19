@@ -2,27 +2,31 @@
 <h1>Home Aspirantes</h1>
 <a class="nav-link" [routerLink]="['/registerA']">Registrar Datos Aspirante</a>
 
+<!-- <form (submit)="">
+    Busqueda por habilidad: <input type="text" [(ngModel)]="aspirante.id" class="text" name="id" placeholder="ID">
+    <button type="submit" class="signin">Buscar</button>
+</form> -->
+
 <form>
-    Busqueda: <input type="text">
-    <table *ngIf="empresas.length > 0">
-        <tr>
-            <td>ID</td>
-            <td>Nombre</td>
-            <td>Pais</td>
-            <td>Estado</td>
-            <td>Municipio</td>
-            <td>Direccion</td>
-            <td>Descripcion</td>
-        </tr>
-        <tr *ngFor="let e of empresas">
-            <td> {{e.ID}} </td>
-            <td> {{e.Nombre}} </td>
-            <td> {{e.Pais}} </td>
-            <td> {{e.Estado}} </td>
-            <td> {{e.Municipio}} </td>
-            <td> {{e.Direccion}} </td>
-            <td> {{e.Descripcion}} </td>
-            <td><button> "BOTON" </button></td>
-        </tr>
+    <a class="nav-link" [routerLink]="['/verTrabajo']" routerLinkActive="active"><b>Ver Trabajo/Empresa</b></a>
+    <table *ngIf="trabajos.length > 0" class="table table-striped table-bordered">
+        <thead bgcolor="#3972e0">
+            <tr>
+              <th scope="col" class="text-center">ID</th>
+              <th scope="col" class="text-center">ID Empresa</th>
+              <th scope="col" class="text-center">Descripcion</th>
+              <th scope="col" class="text-center">Habilidades Necesarias</th>
+              <th scope="col" class="text-center">Horarios</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of trabajos" class="text-center">
+                <td> {{t.ID}} </td>
+                <td> {{t.idEmpresa}} </td>
+                <td> {{t.Descripcion}} </td>
+                <td> {{t.HabilidadesN}} </td>
+                <td> {{t.Horarios}} </td>
+            </tr>
+        </tbody>
     </table>
 </form>
