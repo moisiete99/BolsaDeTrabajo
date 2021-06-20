@@ -147,10 +147,38 @@ router.post('/registerE', async(req, res) => {
 
 router.post('/registerT', async(req, res) => {
     const {id,descripcion,habilidadesN,horarios,idAspirantes} = req.body;
-    const trabajo = {idEmpresa:id, Descripcion:descripcion, HabilidadesN:habilidadesN,Horarios:horarios,idAspirantes:idAspirantes}    
-    const re = await db.query("insert into trabajos set ?", [trabajo])
+    const re = await db.query("select * from empresas where idCorreo = ?", [id]);
+    if(re[0]){
+        idAux = re[0].ID
+    }
+    
+    const trabajo = {idEmpresa:idAux, Descripcion:descripcion, HabilidadesN:habilidadesN,Horarios:horarios,idAspirantes:idAspirantes};
+    const re2 = await db.query("insert into trabajos set ?", [trabajo]);
 
-    res.json(re)
+    res.json({id:re2.insertId})
+    
+    /* const re3 = await db.query("select * from trabajos where ID = ?", [re2.insertId])
+    if(re3[0]){
+        console.log(re3[0].idAspirantes)
+    } */
+    
+})
+
+router.post('/getTC', async(req, res) => {
+    const {id,descripcion,habilidadesN,horarios,idAspirantes} = req.body;
+
+    const re = await db.query("select * from aspirantes where ID = ?", [idAspirantes])
+    if(re[0]){
+        idAux = { id:re[0].idCorreo }
+        console.log(idAux)
+    }
+
+    const re2 = await db.query("select * from cuentas where ID = ?", [idAux])
+    console.log(re2)
+    if(re2[0]){
+        console.log(re2[0].Correo)
+        res.json({ email:re2[0].Correo })
+    }
 })
 
 router.post('/verifyH', async(req, res) => {

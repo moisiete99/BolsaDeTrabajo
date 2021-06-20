@@ -45,6 +45,48 @@ app.get("/mailvalido", (req, res) => {
   //var isValid = true;
 });
 
+app.get("/enviarVacante", (req, res) => {
+  correo = req.query.email 
+  //const { correo } = req.body;
+
+  console.log(correo)
+
+  var transporter = nodemailer.createTransport({
+    host: "smtp.ethereal.email",
+    post: 587,
+    secure: false,
+    auth: {
+      user: "tina.koss@ethereal.email", //kenna96@ethereal.email
+      pass: "S3ZXqyZscVdhVh39CM", //SEmEmdgg7H2tNRtW4Y
+    },
+  });
+
+  var mivariable =
+    "<h3>Hola, existen nuevas vacantes</h3>" +
+    "<h4>'LOOKING FOR JOB'</h4>" +
+    "<h5>Visitanos y conócelas, <a href='http://localhost:4200'>Ver vacantes</a></h5>";
+  mivariable =
+    mivariable +
+    '<img src="https://aq-sf.com/wp-content/uploads/2020/09/UGG.jpg" width="720" height="480">';
+
+  var mailOptions = {
+    from: "Remitente",
+    to: correo, //dilanperalta05@gmail.com
+    subject: "Notification - Nueva vacante(s)",
+    text: "Notification",
+    html: mivariable,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log(error);
+    } else {
+      /* res.send("Mensaje Enviado"); */
+      console.log("vacante Enviada");
+    }
+  });
+});
+
 app.listen(3000, () => {
   console.log("Servidor en http://localhost:3000/");
 });

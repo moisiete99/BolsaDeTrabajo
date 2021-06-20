@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
         console.log(res);
         if(res.id){
           console.log("Se registro")
-          this.router.navigate(['/login'])
+          this.router.navigate(['/'])
         }
       },
       err => console.log(err)

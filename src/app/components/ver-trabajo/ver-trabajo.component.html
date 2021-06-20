@@ -1,5 +1,13 @@
 <!-- <p>ver-trabajo works!</p> -->
 
+<div class="container cuerpo">
+    <p>
+       <button (click)="goToRoom()" type="button" class="btn btn-info">
+         Reunirse <i class="fab fa-teamspeak"></i>
+       </button>
+    </p>
+</div>
+
 <form (submit)="verTrabajo()">
     <h2>Ver Trabajo</h2>
     Busqueda por ID: <input type="text" [(ngModel)]="trabajo.id" class="text" name="id" placeholder="ID">

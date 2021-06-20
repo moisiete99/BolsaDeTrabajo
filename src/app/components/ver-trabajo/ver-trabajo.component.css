@@ -1,0 +1,22 @@
+.table-striped>tbody>tr:nth-child(odd)>td, 
+      .table-striped>tbody>tr:nth-child(odd)>th {
+         background-color: #b13df5;
+       }
+
+       tbody>tr>td{
+        color: #ffe79b;
+       }
+
+       tbody>tr>th{
+        color: #ffe79b;
+       }
+
+       .cuerpo {
+        color: whitesmoke;
+        background-color: #0f1112;
+        padding: 10px 0px;
+     }
+
+     h2{
+       color: white;
+     }

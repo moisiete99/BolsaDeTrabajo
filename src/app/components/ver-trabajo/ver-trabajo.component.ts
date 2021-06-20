@@ -46,4 +46,12 @@ export class VerTrabajoComponent implements OnInit {
     )
   }
 
+  goToRoom = () => {
+    /* this.message = 'Entrando...';
+    setInterval(() => (this.message = 'Listo'), 3000); */
+
+    //abrimos video-chat
+    window.open('http://localhost:3030/', '_blank');
+  };
+
 }

@@ -12,8 +12,8 @@ import { VerTrabajoComponent } from './components/ver-trabajo/ver-trabajo.compon
 import { VideoChatComponent } from "./components/video-chat/video-chat.component";
 
 const routes: Routes = [
-  { path: '', component: VideoChatComponent },
-  { path: 'login', component: LoginComponent},
+  { path: '', component: LoginComponent },
+  { path: 'videoChat', component: VideoChatComponent},
   { path: 'register', component: RegisterComponent },
   { path: 'empresa', component: EmpresaComponent },
   { path: 'aspirante', component: AspiranteComponent },

@@ -26,4 +26,8 @@ export class TrabajosService {
     return this.http.post<any>(this.URL + '/registerT', trabajo)
   }
 
+  getTC(trabajo:any){
+    return this.http.post<any>(this.URL + '/getTC', trabajo)
+  }
+
 }
