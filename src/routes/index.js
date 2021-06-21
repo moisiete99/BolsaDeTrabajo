@@ -168,8 +168,9 @@ router.post('/getTC', async(req, res) => {
     const {id,descripcion,habilidadesN,horarios,idAspirantes} = req.body;
 
     const re = await db.query("select * from aspirantes where ID = ?", [idAspirantes])
+    console.log(re)
     if(re[0]){
-        idAux = { id:re[0].idCorreo }
+        idAux =  re[0].idCorreo 
         console.log(idAux)
     }
 
@@ -178,7 +179,7 @@ router.post('/getTC', async(req, res) => {
     if(re2[0]){
         console.log(re2[0].Correo)
         res.json({ email:re2[0].Correo })
-    }
+    } 
 })
 
 router.post('/verifyH', async(req, res) => {

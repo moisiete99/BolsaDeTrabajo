@@ -18,6 +18,7 @@ export class RegisterTComponent implements OnInit {
 
   id = this.authService.getID()
   email:any
+  ID:any
 
   trabajo = {id:this.id,descripcion:"",habilidadesN:"",horarios:"",idAspirantes:""}
 
@@ -40,7 +41,7 @@ export class RegisterTComponent implements OnInit {
 
         var URL = '?email=' + this.email
 
-    window.open("http://localhost:3000/enviarVacante/"+URL, "_blank")
+        window.open("http://localhost:3000/enviarVacante/"+URL, "_blank") 
       },
       err => console.log(err)
     )
