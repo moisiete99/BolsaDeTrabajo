@@ -47,6 +47,11 @@ export class NavbarComponent implements OnInit {
     )
   }
 
+  logout(){
+    this.authService.deleteToken()
+    this.router.navigate(['/'])
+  }
+
   /* private changeName(name: boolean): void {
     this.logoutbtn = name;
     this.loginbtn = !name;
