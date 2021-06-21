@@ -33,6 +33,10 @@ export class AuthService {
     return this.http.post<any>(this.URL + "/verifyH", email)
   }
 
+  delete(id:any){
+    return this.http.post<any>(this.URL + '/delete', id)
+  }
+
   setID(id:any){
     sessionStorage.setItem("ID",id)
   }

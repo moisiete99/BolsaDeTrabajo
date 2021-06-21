@@ -195,4 +195,22 @@ router.post('/verifyH', async(req, res) => {
     }
 })
 
+router.post('/delete', async(req, res) => {
+    const {id} = req.body;
+    console.log(id)
+    const re = await db.query("delete from cuentas where ID = ?", [id])
+    console.log(re)
+    const re2 = await db.query("delete from aspirantes where idCorreo = ?", [id])
+    console.log(re2)
+    
+    res.json({res1:re, res2:re2})
+})
+
+router.post('/delTrabajo', async(req, res) => {
+    const {id} = req.body;
+    const re = await db.query("delete from trabajos where ID = ?", [id])
+
+    res.json(re)
+})
+
 module.exports = router;

@@ -30,4 +30,8 @@ export class TrabajosService {
     return this.http.post<any>(this.URL + '/getTC', trabajo)
   }
 
+  delTrabajo(trabajo:any){
+    return this.http.post<any>(this.URL + '/delTrabajo', trabajo)
+  }
+
 }

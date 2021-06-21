@@ -21,6 +21,7 @@ import { RegisterEComponent } from './components/register-e/register-e.component
 import { VerAspiranteComponent } from './components/ver-aspirante/ver-aspirante.component';
 import { RegisterTComponent } from './components/register-t/register-t.component';
 import { VerTrabajoComponent } from './components/ver-trabajo/ver-trabajo.component';
+import { DelTrabajoComponent } from './components/del-trabajo/del-trabajo.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { VerTrabajoComponent } from './components/ver-trabajo/ver-trabajo.compon
     RegisterEComponent,
     VerAspiranteComponent,
     RegisterTComponent,
-    VerTrabajoComponent
+    VerTrabajoComponent,
+    DelTrabajoComponent
   ],
   imports: [
     BrowserModule,

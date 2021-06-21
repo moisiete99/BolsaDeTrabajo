@@ -29,6 +29,7 @@ export class NavbarComponent implements OnInit {
   }
 
   email = {email:this.authService.getEmail()}
+  id:any
 
   home(){
     this.authService.verifyHome(this.email)
@@ -42,6 +43,19 @@ export class NavbarComponent implements OnInit {
         else if(res.tipo == "E"){
           this.router.navigate(['/empresa'])
         }
+      },
+      err => console.log(err)
+    )
+  }
+
+  delete(){
+    this.id = {id: this.authService.getID()}
+    this.authService.delete(this.id)
+    .subscribe(
+      res => {
+        console.log(res)
+        alert("Se a eliminado tu cuenta")
+        this.router.navigate(['/'])
       },
       err => console.log(err)
     )

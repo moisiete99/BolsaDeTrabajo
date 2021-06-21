@@ -28,22 +28,9 @@
         </thead>
         <tbody *ngIf="show; else notShow">
             <h2>No hay datos para mostrar</h2>
-            <tr *ngFor="let a of aspirantes" class="text-center">
+            <!-- <tr *ngFor="let a of aspirantes" class="text-center">
                 
-                <!-- <td> {{a.ID}} </td>
-                <td> {{a.Nombre}} </td>
-                <td> {{a.Apellidos}} </td>
-                <td> {{a.Edad}} </td>
-                <td> {{a.Pais}} </td>
-                <td> {{a.Estado}} </td>
-                <td> {{a.Municipio}} </td>
-                <td> {{a.Direccion}} </td>
-                <td> {{a.AcercaDe}} </td>
-                <td> {{a.Descripcion}} </td>
-                <td> {{a.Habilidades}} </td>
-                <td></td>
-                <td><button> "BOTON" </button></td> -->
-            </tr>
+            </tr> -->
         </tbody>
         <tbody>
             <ng-template #notShow>
@@ -59,8 +46,6 @@
                     <td> {{a.AcercaDe}} </td>
                     <td> {{a.Descripcion}} </td>
                     <td> {{a.Habilidades}} </td>
-                    <td></td>
-                    <td><button> "BOTON" </button></td>
                 </tr>
             </ng-template>
         </tbody>

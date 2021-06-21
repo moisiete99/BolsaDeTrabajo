@@ -11,6 +11,7 @@
 <form>
     <a class="nav-link" [routerLink]="['/verAspirante']" routerLinkActive="active"><b>Ver Aspirante</b></a>
     <a class="nav-link" [routerLink]="['/registerT']" routerLinkActive="active"><b>Registrar Trabajo</b></a>
+    <a class="nav-link" [routerLink]="['/delTrabajo']" routerLinkActive="active"><b>Eliminar Trabajo</b></a>
     <table *ngIf="aspirantes.length > 0" class="table table-striped table-bordered">
         <thead bgcolor="#3972e0">
             <tr>
@@ -26,7 +27,6 @@
               <th scope="col" class="text-center">Acerca de</th>
               <th scope="col" class="text-center">Descricpión</th>
               <th scope="col" class="text-center">Habilidades</th>
-              <th scope="col" class="text-center">Foto</th>
             </tr>
         </thead>
         <tbody *ngIf="show; else notShow">
@@ -42,8 +42,6 @@
                     <td> {{a.AcercaDe}} </td>
                     <td> {{a.Descripcion}} </td>
                     <td> {{a.Habilidades}} </td>
-                    <td></td>
-                    <td><button> "BOTON" </button></td>
                 </tr>
         
         </tbody>
@@ -61,10 +59,8 @@
                     <td> {{a.AcercaDe}} </td>
                     <td> {{a.Descripcion}} </td>
                     <td> {{a.Habilidades}} </td>
-                    <td></td>
-                    <td><button> "BOTON" </button></td>
                 </tr>
-            </ng-template>>
+            </ng-template>
         </tbody>
     </table>
 </form>
