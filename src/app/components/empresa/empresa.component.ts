@@ -24,6 +24,7 @@ export class EmpresaComponent implements OnInit {
     this.verAspirantes()
   }
 
+  //Funcion para mostrar todos los apirantes registrados
   verAspirantes(){
     this.aspService.getAllAspirantes()
     .subscribe(
@@ -35,6 +36,7 @@ export class EmpresaComponent implements OnInit {
     );
   }
 
+  //Funcion para mostrar un aspirante en especifico definiendo la busqueda por el id
   verAspirante(){
     this.show = false
     console.log(this.aspirante)
@@ -46,28 +48,6 @@ export class EmpresaComponent implements OnInit {
       },
       err => console.log(err)
     );
-    //console.log(this.aspirante)
-
-    /*this.aspService.getAspirante(this.aspirante)
-    .subscribe(
-      res => {
-        this.aspirante = res
-        console.log(this.aspirante)
-      },
-      err => console.log(err)
-    )*/
-    /*this.aspService.setIdAsp(this.aspirante)
-    this.router.navigate(['/verAspirantes'])*/
-
-    
-    /*this.aspService.getAspirante(this.aspirante)
-    .subscribe(
-      res => {
-        this.aspirantes = res
-        console.log(this.aspirantes)
-      },
-      err => console.log(err)
-    )*/
   }
 
   /* Original

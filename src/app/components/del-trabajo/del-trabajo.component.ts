@@ -17,6 +17,7 @@ export class DelTrabajoComponent implements OnInit {
   trabajo = {id:""}
   trabajos = []
 
+  //Funcion para mostrar en el HTML los trabajos registrados
   verTrabajos(){
     this.traService.getAllTrabajos()
     .subscribe(
@@ -28,6 +29,7 @@ export class DelTrabajoComponent implements OnInit {
     )
   }
 
+  //Funcion donde se manda un id para eliminar un trabajo
   delTrabajo(){
     this.traService.delTrabajo(this.trabajo)
     .subscribe(

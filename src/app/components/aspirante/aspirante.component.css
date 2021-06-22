@@ -1,12 +1,26 @@
 .table-striped>tbody>tr:nth-child(odd)>td, 
-      .table-striped>tbody>tr:nth-child(odd)>th {
-         background-color: #b13df5;
-       }
+.table-striped>tbody>tr:nth-child(odd)>th {
+  background-color: #b13df5;
+}
 
-       tbody>tr>td{
-        color: #ffe79b;
-       }
+tbody>tr>td{
+  color: #ffe79b;
+}
 
-       tbody>tr>th{
-        color: #ffe79b;
-       }
+tbody>tr>th{
+  color: #ffe79b;
+}
+
+h1 {
+  padding: 30px;
+  color: blanchedalmond;
+}
+      
+a {
+  text-align: center;
+  padding: 70px 50px;
+  border-radius: 10%;
+  border: groove 1em red;
+  background-color: #ffe79b;
+  font-size: 17pt;
+}

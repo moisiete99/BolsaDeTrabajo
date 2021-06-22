@@ -20,6 +20,7 @@ export class RegisterEComponent implements OnInit {
 
   empresa = {id:this.id,pais:"",estado:"",municipio:"",direccion:"",descripcion:"",foto:""}
 
+  //Funcion para registrar los datos faltantes para una empresa
   registrarE(){
     console.log(this.empresa)
     this.empService.registrarEmp(this.empresa)

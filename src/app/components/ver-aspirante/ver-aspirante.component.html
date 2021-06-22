@@ -3,7 +3,7 @@
 <h2>Ver Aspirante por ID</h2>
 
 <form (submit)="verAspirante()">
-    Busqueda por ID: <input type="text" [(ngModel)]="aspirante.id" class="text" name="id" placeholder="ID">
+    <label>Busqueda por ID:</label><input type="text" [(ngModel)]="aspirante.id" class="text" name="id" placeholder="ID">
     <button type="submit" class="signin">Buscar</button>
 </form>
 
@@ -23,17 +23,16 @@
                 <th scope="col" class="text-center">Acerca de</th>
                 <th scope="col" class="text-center">Descricpión</th>
                 <th scope="col" class="text-center">Habilidades</th>
-                <th scope="col" class="text-center">Foto</th>
               </tr>
         </thead>
         <tbody *ngIf="show; else notShow">
-            <h2>No hay datos para mostrar</h2>
+            <h3>No hay datos para mostrar</h3>
             <!-- <tr *ngFor="let a of aspirantes" class="text-center">
                 
             </tr> -->
         </tbody>
-        <tbody>
-            <ng-template #notShow>
+        <ng-template #notShow>
+            <tbody>
                 <tr *ngFor="let a of aspirante2" class="text-center">
                     <td> {{a.ID}} </td>
                     <td> {{a.Nombre}} </td>
@@ -47,7 +46,7 @@
                     <td> {{a.Descripcion}} </td>
                     <td> {{a.Habilidades}} </td>
                 </tr>
-            </ng-template>
-        </tbody>
+            </tbody>
+        </ng-template>
     </table>
 </form>

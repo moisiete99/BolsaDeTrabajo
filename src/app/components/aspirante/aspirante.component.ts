@@ -20,6 +20,7 @@ export class AspiranteComponent implements OnInit {
     this.verTrabajos()
   }
 
+  //Funcion para mandar llamar los trabajos que estan en la base de datos
   verTrabajos(){
     this.traService.getAllTrabajos()
     .subscribe(

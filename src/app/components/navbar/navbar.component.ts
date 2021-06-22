@@ -9,21 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  /* loginbtn:boolean;
-  logoutbtn:boolean; */
-
-  constructor(private authService: AuthService, private router:Router) {
-    /* authService.getLoggedInName.subscribe(name => this.changeName(name));
-    if(this.authService.isLoggedIn()){
-      console.log("loggedin");
-      this.loginbtn=false;
-      this.logoutbtn=true
-    }
-    else{
-      this.loginbtn=true;
-      this.logoutbtn=false
-    } */
-  }
+  constructor(private authService: AuthService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +17,7 @@ export class NavbarComponent implements OnInit {
   email = {email:this.authService.getEmail()}
   id:any
 
+  //Funcion para redireccionar al componente esfecifico para un usuario
   home(){
     this.authService.verifyHome(this.email)
     .subscribe(
@@ -48,6 +35,7 @@ export class NavbarComponent implements OnInit {
     )
   }
 
+  //Funcion que elimina los datos de la cuenta que esta logueada
   delete(){
     this.id = {id: this.authService.getID()}
     this.authService.delete(this.id)
@@ -61,19 +49,10 @@ export class NavbarComponent implements OnInit {
     )
   }
 
+  //Funcion para cerrar sesion que eliminar las variables de sesion y nos redirecciona
   logout(){
     this.authService.deleteToken()
     this.router.navigate(['/'])
   }
-
-  /* private changeName(name: boolean): void {
-    this.logoutbtn = name;
-    this.loginbtn = !name;
-  }
-  logout(){
-    this.authService.deleteToken();
-    window.location.href = window.location.href;
-    this.router.navigate(['/login'])
-  } */
 
 }

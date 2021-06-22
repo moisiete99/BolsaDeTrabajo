@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
 
   user = {name:"", email:"", password:"", tipo:""}
 
+  //Funcion para registrar un nuevo usuario
   register(){
     this.authService.signUp(this.user)
     .subscribe(

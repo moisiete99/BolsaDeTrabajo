@@ -8,8 +8,8 @@ app.get("/", (req, res) => {
     post: 587,
     secure: false,
     auth: {
-      user: "jordon.gusikowski@ethereal.email",
-      pass: "wZ3fGjeynk5saeyavq",
+      user: "tina.koss@ethereal.email",
+      pass: "S3ZXqyZscVdhVh39CM",
     },
   });
 

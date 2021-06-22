@@ -20,6 +20,7 @@ export class RegisterAComponent implements OnInit {
 
   aspirante = {id:this.id,apellidos:"",edad:"",pais:"",estado:"",municipio:"",direccion:"",acercade:"",descripcion:"",habilidades:"",foto:""}  
 
+  //Funcion para registrar los datos restantes de un aspirante
   registrarA(){
     console.log(this.aspirante)
     this.aspService.registrarAsp(this.aspirante)

@@ -1,22 +1,39 @@
 .table-striped>tbody>tr:nth-child(odd)>td, 
-      .table-striped>tbody>tr:nth-child(odd)>th {
-         background-color: #b13df5;
-       }
+.table-striped>tbody>tr:nth-child(odd)>th {
+  background-color: #b13df5;
+}
 
-       tbody>tr>td{
-        color: #ffe79b;
-       }
+tbody>tr>td{
+  color: #ffe79b;
+}
 
-       tbody>tr>th{
-        color: #ffe79b;
-       }
+tbody>tr>th{
+  color: #ffe79b;
+}
 
-       .cuerpo {
-        color: whitesmoke;
-        background-color: #0f1112;
-        padding: 10px 0px;
-     }
+.cuerpo {
+  color: whitesmoke;
+  background-color: #0f1112;
+  padding: 10px 0px;
+}
 
-     h2{
-       color: white;
-     }
+h2{
+  padding: 30px;
+  color: blanchedalmond;
+}
+label{
+  padding: 30px;
+  color: #ffe79b;
+}
+h3{
+  color: red;
+}
+.boton{
+  padding: 15px 5% 15px 5%;
+  font-size: 20px;
+  font-weight: bold;
+  color: olive;
+}
+p{
+  text-align: center;
+}

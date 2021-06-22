@@ -19,7 +19,9 @@ export class LoginComponent implements OnInit {
 
   id:any
 
+  //Funcion para iniciar sesion
   signin(){
+    //Se llama a un servicio para validar que el correo y la contraseña esta en la base de datos
     this.authService.signIn(this.user)
     .subscribe(
       res => {
@@ -34,8 +36,10 @@ export class LoginComponent implements OnInit {
       err => console.log(err)
     )
 
+    //Se setea en la variable de sesion el correo de quien ingreso
     this.authService.setEmail(this.user)
 
+    //Se verifica si la cuenta fue de aspirante o empresa para redireccionar a su componente especifico
     this.authService.verify(this.user)
     .subscribe(
       res => {
